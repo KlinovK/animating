@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,114 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="animating" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="darkBlueBG" translatesAutoresizingMaskIntoConstraints="NO" id="NIk-Hj-Vc0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4s3-Kd-Djg">
+                                <rect key="frame" x="139" y="285" width="96" height="96"/>
+                                <state key="normal" image="powerButton"/>
+                                <connections>
+                                    <action selector="powerBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RZd-pk-X4r"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKj-H7-5Tm" userLabel="mainView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HcB-cc-yhx" userLabel="mLeft">
+                                        <rect key="frame" x="-50" y="308" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15686274510000001" green="0.66666666669999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1JO-mX-0zB" userLabel="mTop">
+                                        <rect key="frame" x="162" y="-50" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15686274510000001" green="0.66666666669999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LK0-oK-9ed" userLabel="mRight">
+                                        <rect key="frame" x="375" y="308" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15686274510000001" green="0.66666666669999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RbP-cq-wpn" userLabel="mBottom">
+                                        <rect key="frame" x="162" y="667" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15686274510000001" green="0.66666666669999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJZ-lY-29C" userLabel="crBottom">
+                                        <rect key="frame" x="375" y="617" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15686274510000001" green="0.66666666669999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L0I-NN-itz" userLabel="clTop">
+                                        <rect key="frame" x="-50" y="28" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15686274510000001" green="0.66666666669999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4vh-DO-fCw" userLabel="clBottom">
+                                        <rect key="frame" x="-50" y="617" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15686274510000001" green="0.66666666669999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nX0-gi-VXd" userLabel="crTop">
+                                        <rect key="frame" x="375" y="28" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15686274510000001" green="0.66666666669999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDE-42-TcK">
+                                        <rect key="frame" x="139" y="285" width="96" height="96"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                        <state key="normal" image="powerButton"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29411764705882354" green="0.46666666666666667" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="sDE-42-TcK" firstAttribute="centerX" secondItem="cKj-H7-5Tm" secondAttribute="centerX" id="Ka5-93-lhK"/>
+                                    <constraint firstItem="sDE-42-TcK" firstAttribute="centerY" secondItem="cKj-H7-5Tm" secondAttribute="centerY" id="crA-R7-YLB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NIk-Hj-Vc0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2HF-IM-Cn2"/>
+                            <constraint firstItem="4s3-Kd-Djg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5lx-lI-Vm5"/>
+                            <constraint firstItem="4s3-Kd-Djg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6qr-HD-mfL"/>
+                            <constraint firstItem="cKj-H7-5Tm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EXi-Ah-TY9"/>
+                            <constraint firstItem="cKj-H7-5Tm" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="IgU-3p-AqH"/>
+                            <constraint firstItem="NIk-Hj-Vc0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LLR-8G-VeH"/>
+                            <constraint firstItem="cKj-H7-5Tm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Oyg-0a-fmG"/>
+                            <constraint firstItem="cKj-H7-5Tm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PAz-xw-8xF"/>
+                            <constraint firstItem="NIk-Hj-Vc0" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="dPm-tS-Pna"/>
+                            <constraint firstItem="NIk-Hj-Vc0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lSe-hD-EOc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="clBottomUnit" destination="4vh-DO-fCw" id="pyO-Iv-DgM"/>
+                        <outlet property="clTopUnit" destination="L0I-NN-itz" id="igI-2X-Kpq"/>
+                        <outlet property="crBottomUnit" destination="hJZ-lY-29C" id="0s5-Ka-SUL"/>
+                        <outlet property="crTopUnit" destination="nX0-gi-VXd" id="YwV-qa-94c"/>
+                        <outlet property="darkBlueBG" destination="NIk-Hj-Vc0" id="02V-ir-ycW"/>
+                        <outlet property="mBottomUnit" destination="RbP-cq-wpn" id="rKr-p5-cp3"/>
+                        <outlet property="mLeftUnit" destination="HcB-cc-yhx" id="r6c-FW-pDw"/>
+                        <outlet property="mRightUnit" destination="LK0-oK-9ed" id="01k-6O-lpa"/>
+                        <outlet property="mTopUnit" destination="1JO-mX-0zB" id="tNc-JC-o8z"/>
+                        <outlet property="mainView" destination="cKj-H7-5Tm" id="Ftt-k0-2KR"/>
+                        <outlet property="powerBtn" destination="4s3-Kd-Djg" id="487-bx-je3"/>
+                        <outlet property="refreshBtn" destination="sDE-42-TcK" id="Jat-lt-NLS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="darkBlueBG" width="414" height="736"/>
+        <image name="powerButton" width="96" height="96"/>
+    </resources>
 </document>
